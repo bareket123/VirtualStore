@@ -57,7 +57,7 @@ public class VirtualStore {
 
                 Worker newWorker = new Worker(firstName, lastName, username, password,isClubMember,workerRank);
                 usersList.add(newWorker);
-                System.out.println("worker was add!");
+                System.out.println("worker was added!");
 
                 break;
         }
@@ -138,7 +138,7 @@ public class VirtualStore {
      return username;
     }
 
-    public void SignIn() {
+    public void signIn() {
         Scanner scanner = new Scanner(System.in);
         int userChoice;
         String username,password;
@@ -153,6 +153,7 @@ public class VirtualStore {
         username = scanner.nextLine();
         System.out.println("Please enter your password");
         password = scanner.nextLine();
+
 
         switch (userChoice) {
                 case Constants.CUSTOMER_ACCOUNT:
@@ -218,7 +219,6 @@ public class VirtualStore {
                 }
 
             }while ((selectedProduct!= Constants.END_PURCHASE));
-
             System.out.println("Thank you for your order, your final price is "+ returnTotalCost(shoppingCart,isClubMember,rank)+" ,goodbye");
 
         }
@@ -405,7 +405,7 @@ public class VirtualStore {
                                             productsList.get(chosenProduct-1).setAmount(productAmount);
                                         }else {
                                             productsList.get(chosenProduct-1).setAmount(0);
-                                            System.out.println("change amount of" + productsList.get(chosenProduct-1).getDescription()+" to 0 ");
+                                            System.out.println("change amount of " + productsList.get(chosenProduct-1).getDescription()+" to 0 ");
 
                                         }
                                         System.out.println("updated successfully!");
@@ -419,6 +419,9 @@ public class VirtualStore {
                                             break;
                                             case Constants.SIGN_OUT:
                                                 break;
+                                         default:
+                                             System.out.println("not a valid option");
+                                             break;
 
 
             }

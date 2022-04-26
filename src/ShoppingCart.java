@@ -14,4 +14,5 @@ public class ShoppingCart {
     public void setListOfProducts(HashMap<Product,Integer> listOfProducts) {
         this.listOfProducts = listOfProducts;
     }
+
 }
